@@ -1,14 +1,13 @@
 function solution(arr) {
     const answer = [];
-    const stack = [];
-
-    for (const num of arr) {
-        if (stack.length === 0 || stack[stack.length - 1] !== num) {
-            stack.push(num);
+    
+    for (let i = 0; i < arr.length; i++) {
+        if (i === 0 || arr[i] !== arr[i - 1]) {
+            answer.push(arr[i]);
         }
     }
 
-    return stack;
+    return answer;
 }
 
 const arr1 = [1, 1, 3, 3, 0, 1, 1];
